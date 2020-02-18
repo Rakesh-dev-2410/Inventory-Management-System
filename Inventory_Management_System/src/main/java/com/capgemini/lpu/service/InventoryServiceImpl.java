@@ -9,9 +9,8 @@ import com.capgemini.lpu.entity.InvSupplier;
 import com.capgemini.lpu.entity.Order;
 import com.capgemini.lpu.entity.ProductStock;
 import com.capgemini.lpu.exceptions.InvalidOrderIdException;
-import com.capgemini.lpu.exceptions.InvalidPriceException;
 import com.capgemini.lpu.exceptions.InvalidProductIdException;
-import com.capgemini.lpu.exceptions.InvalidVendorException;
+import com.capgemini.lpu.exceptions.InvalidVendorIDException;
 import com.capgemini.lpu.exceptions.OutofStockException;;
 
 public class InventoryServiceImpl implements InventoryService {
@@ -19,34 +18,32 @@ public class InventoryServiceImpl implements InventoryService {
 	InventoryDao dao = new InventoryDaoImpl();
 	
 	@Override
-	public boolean addOrder(Order order) throws InvalidOrderIdException, 
-											   InvalidProductIdException, 
-											   InvalidPriceException, 
-											   InvalidVendorException, 
-											   OutofStockException {
+	public boolean addOrder(Order order) throws InvalidOrderIdException, InvalidProductIdException, 
+											   InvalidVendorIDException, OutofStockException {
 		String ordid=orderIdGenerator();
 		order.setOrderId(ordid);
-		
-		if(order.getOrderId()!="[A-Z][1][0-9]{2}" || order.getOrderId() == null)	
-			throw new InvalidOrderIdException();	//validates Order Id.
-		
-		if( order.getProdId() != "[A-Z][0-9]{3}"|| order.getProdId()==null)
-			throw new InvalidProductIdException();	//validates Product Id.
-		
-		if(order.getPrice()<100)
-			throw new InvalidPriceException();	
-		
-		if(order.getvendorID()!="[1][0-9]{3}" || order.getvendorID()==null)
-			throw new InvalidVendorException();		//validates Vendor ID.
-		
-		InvSupplier sup = dao.getVendor(order.getvendorID());	//checks vendor 
 		
 		ProductStock prod = dao.getProduct(order.getProdId());	//check Product ID in the productStock
 		if(order.getOrderQty()>prod.getProdStockQty())
 			throw new OutofStockException();
 		
+		/*if(order.getOrderId()!="[A-Z][1][0-9]{2}" || order.getOrderId() == null)	
+			throw new InvalidOrderIdException();	//validates Order Id.
+	
+		*/
+		if(order.getvendorID()!="[1][0-9]{3}" || order.getvendorID()==null)
+			throw new InvalidVendorIDException();		//validates Vendor ID.
+		
+		if( order.getProdId() != "[A-Z][0-9]{3}"|| order.getProdId()==null)
+			throw new InvalidProductIdException();	//validates Product Id.
+		
+		InvSupplier sup = dao.getVendor(order.getvendorID());	//checks vendor
+		
 		if(dao.daoAddOrder(order)) {
-			dao.updateProductStock(order.getProdId(), order.getOrderQty());
+			ProductStock prod1 = dao.getProduct(order.getProdId());
+			int stock = prod1.getProdStockQty()-order.getOrderQty();
+			prod1.setProdStockQty(stock);
+			dao.updateProductStock(prod1);
 			return true;	 //Order placed Successfully
 		}
 		else

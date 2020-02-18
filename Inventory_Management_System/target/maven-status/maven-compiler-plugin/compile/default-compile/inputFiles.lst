@@ -1,2 +1,13 @@
-C:\Users\user\Eclipse_workspace1\MavenDemo\src\main\java\com\capgemini\lpu\Inventory_Management_System\App.java
-C:\Users\user\Eclipse_workspace1\MavenDemo\src\main\java\com\capgemini\lpu\Inventory_Management_System\CalcSeries.java
+C:\Users\user\git\Inventory-Management-System\Inventory_Management_System\src\main\java\com\capgemini\lpu\service\InventoryService.java
+C:\Users\user\git\Inventory-Management-System\Inventory_Management_System\src\main\java\com\capgemini\lpu\service\InventoryServiceImpl.java
+C:\Users\user\git\Inventory-Management-System\Inventory_Management_System\src\main\java\com\capgemini\lpu\dao\InventoryDao.java
+C:\Users\user\git\Inventory-Management-System\Inventory_Management_System\src\main\java\com\capgemini\lpu\entity\Distributor.java
+C:\Users\user\git\Inventory-Management-System\Inventory_Management_System\src\main\java\com\capgemini\lpu\exceptions\InvalidProductIdException.java
+C:\Users\user\git\Inventory-Management-System\Inventory_Management_System\src\main\java\com\capgemini\lpu\repo\InventoryRepository.java
+C:\Users\user\git\Inventory-Management-System\Inventory_Management_System\src\main\java\com\capgemini\lpu\dao\InventoryDaoImpl.java
+C:\Users\user\git\Inventory-Management-System\Inventory_Management_System\src\main\java\com\capgemini\lpu\entity\InvSupplier.java
+C:\Users\user\git\Inventory-Management-System\Inventory_Management_System\src\main\java\com\capgemini\lpu\entity\Order.java
+C:\Users\user\git\Inventory-Management-System\Inventory_Management_System\src\main\java\com\capgemini\lpu\entity\ProductStock.java
+C:\Users\user\git\Inventory-Management-System\Inventory_Management_System\src\main\java\com\capgemini\lpu\exceptions\InvalidVendorException.java
+C:\Users\user\git\Inventory-Management-System\Inventory_Management_System\src\main\java\com\capgemini\lpu\exceptions\OutofStockException.java
+C:\Users\user\git\Inventory-Management-System\Inventory_Management_System\src\main\java\com\capgemini\lpu\exceptions\InvalidOrderIdException.java

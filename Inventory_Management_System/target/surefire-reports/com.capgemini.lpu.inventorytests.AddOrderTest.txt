@@ -1,0 +1,52 @@
+-------------------------------------------------------------------------------
+Test set: com.capgemini.lpu.inventorytests.AddOrderTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.132 sec <<< FAILURE!
+com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder2()  Time elapsed: 0.126 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <com.capgemini.lpu.exceptions.InvalidProductIdException> but was: <java.lang.NullPointerException>
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:65)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:2952)
+	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder2(AddOrderTest.java:35)
+Caused by: java.lang.NullPointerException
+	at com.capgemini.lpu.inventorytests.AddOrderTest.lambda$0(AddOrderTest.java:35)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55)
+	... 21 more
+
+com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder1()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder1(AddOrderTest.java:29)
+
+com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder3()  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <com.capgemini.lpu.exceptions.InvalidProductIdException> but was: <java.lang.NullPointerException>
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:65)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:2952)
+	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder3(AddOrderTest.java:41)
+Caused by: java.lang.NullPointerException
+	at com.capgemini.lpu.inventorytests.AddOrderTest.lambda$1(AddOrderTest.java:41)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55)
+	... 21 more
+
+com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder5()  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <com.capgemini.lpu.exceptions.InvalidVendorIDException> but was: <java.lang.NullPointerException>
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:65)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:2952)
+	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder5(AddOrderTest.java:53)
+Caused by: java.lang.NullPointerException
+	at com.capgemini.lpu.inventorytests.AddOrderTest.lambda$3(AddOrderTest.java:53)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55)
+	... 21 more
+
+com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder4()  Time elapsed: 0.002 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <com.capgemini.lpu.exceptions.OutofStockException> but was: <java.lang.NullPointerException>
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:65)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:2952)
+	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder4(AddOrderTest.java:47)
+Caused by: java.lang.NullPointerException
+	at com.capgemini.lpu.inventorytests.AddOrderTest.lambda$2(AddOrderTest.java:47)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55)
+	... 21 more
+

@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------
+Test set: com.capgemini.lpu.inventorytests.AddOrderTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.125 sec <<< FAILURE!
+com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder3()  Time elapsed: 0.125 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <com.capgemini.lpu.exceptions.InvalidVendorIDException> but was: <java.lang.NullPointerException>
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:65)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:2952)
+	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder3(InventoryMngmntSystemTest.java:43)
+Caused by: java.lang.NullPointerException
+	at com.capgemini.lpu.inventorytests.AddOrderTest.lambda$1(InventoryMngmntSystemTest.java:43)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55)
+	... 21 more
+
+com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder2()  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <com.capgemini.lpu.exceptions.InvalidOrderIdException> but was: <java.lang.NullPointerException>
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:65)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:2952)
+	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder2(InventoryMngmntSystemTest.java:37)
+Caused by: java.lang.NullPointerException
+	at com.capgemini.lpu.inventorytests.AddOrderTest.lambda$0(InventoryMngmntSystemTest.java:37)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55)
+	... 21 more
+
+com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder1()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder1(InventoryMngmntSystemTest.java:31)
+
