@@ -5,37 +5,29 @@ import java.util.Random;
 
 import com.capgemini.lpu.dao.InventoryDao;
 import com.capgemini.lpu.dao.InventoryDaoImpl;
-import com.capgemini.lpu.entity.InvSupplier;
 import com.capgemini.lpu.entity.Order;
 import com.capgemini.lpu.entity.ProductStock;
-import com.capgemini.lpu.exceptions.InvalidOrderIdException;
 import com.capgemini.lpu.exceptions.InvalidProductIdException;
 import com.capgemini.lpu.exceptions.InvalidVendorIDException;
-import com.capgemini.lpu.exceptions.OutofStockException;;
+import com.capgemini.lpu.exceptions.OutofStockException;
 
 public class InventoryServiceImpl implements InventoryService {
 
 	InventoryDao dao = new InventoryDaoImpl();
 	
 	@Override
-	public boolean addOrder(Order order) throws InvalidOrderIdException, InvalidProductIdException, 
-											   InvalidVendorIDException, OutofStockException {
+	public boolean addOrder(Order order) throws InvalidProductIdException,InvalidVendorIDException, OutofStockException {
 		
 		if(!order.getvendorID().matches("[1][0-9]{3}") || order.getvendorID()==null)
-			throw new InvalidVendorIDException();		//validates Vendor ID.
+			throw new InvalidVendorIDException("Invalid Supplier Id");		//validates Vendor ID.
 		
 		if( !order.getProdId().matches("[A-Z][0-9]{3}") || order.getProdId()==null)
-			throw new InvalidProductIdException();	//validates Product Id.
+			throw new InvalidProductIdException("Invalid Product Id");	//validates Product Id.
 		
-		ProductStock prod = dao.getProduct(order.getProdId());	//check Product ID in the productStock
-		if(order.getOrderQty()>prod.getProdStockQty())
-			throw new OutofStockException();
-		
-		/*if(order.getOrderId()!="[A-Z][1][0-9]{2}" || order.getOrderId() == null)	
-			throw new InvalidOrderIdException();	//validates Order Id.
-		*/
-		
-		
+		ProductStock prod = dao.getProduct(order.getProdId());	
+		if(order.getOrderQty()>prod.getProdStockQty())		//check the selected product is in the productStock or not.
+			throw new OutofStockException("The selected product is out of stock");
+
 		if(dao.daoAddOrder(order)) {
 			String ordid=orderIdGenerator();
 			order.setOrderId(ordid);
@@ -74,9 +66,9 @@ public class InventoryServiceImpl implements InventoryService {
 	@Override
 	public boolean checkRandomOrderId(String str) {
 		Map<String, Order> omap = dao.viewAllOrders();
-		if(omap.containsKey(str))
+		if(omap.containsKey(str)) {
 			return false;
-		else
+		}
 			return true;
 	}
 

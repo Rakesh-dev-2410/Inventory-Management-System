@@ -36,7 +36,7 @@ public class InventoryDaoImpl implements InventoryDao {
 			return InventoryRepository.ordermap.get(ordID);
 			}
 		else
-			throw new InvalidOrderIdException();
+			throw new InvalidOrderIdException("Order Id already exists.");
 			
 		
 	}

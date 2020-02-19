@@ -10,9 +10,9 @@ import com.capgemini.lpu.entity.ProductStock;
 
 public class InventoryRepository {
 	
-	public static Map<String,InvSupplier> vendormap = new HashMap<>();
-	public static Map<String, ProductStock> smap = new HashMap<>();
-	public static Map<String,Order> ordermap =  new HashMap<>();
+	public static final Map<String,InvSupplier> vendormap = new HashMap<>();
+	public static final Map<String, ProductStock> smap = new HashMap<>();
+	public static final Map<String,Order> ordermap =  new HashMap<>();
 	
 	static {
 		
@@ -79,6 +79,10 @@ public class InventoryRepository {
 		ordermap.put(ord3.getOrderId(), ord3);
 		ordermap.put(ord4.getOrderId(), ord4);
 		}
+	
+	private InventoryRepository() {
+		
+	}
 		
 		
 }
