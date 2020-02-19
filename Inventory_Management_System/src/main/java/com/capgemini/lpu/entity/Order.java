@@ -21,13 +21,18 @@ public class Order {
 		this.vendorID = vendorID;
 	}
 	
-	public Order(String prodId, int orderQty, String vendorID) {
+	public Order(String prodId, double price, int orderQty, LocalDate expDelDate, String vendorID) {
 		super();
 		this.prodId = prodId;
+		this.price = price;
 		this.orderQty = orderQty;
+		this.expDelDate = expDelDate;
 		this.vendorID = vendorID;
 	}
-
+	
+	public Order() {
+		super();
+	}
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;

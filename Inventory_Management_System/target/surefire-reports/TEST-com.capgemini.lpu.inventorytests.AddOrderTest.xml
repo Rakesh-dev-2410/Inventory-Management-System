@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="5" name="com.capgemini.lpu.inventorytests.AddOrderTest" time="0.128" errors="0" skipped="0">
+<testsuite tests="6" failures="6" name="com.capgemini.lpu.inventorytests.AddOrderTest" time="0.129" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_241\jre\bin"/>
@@ -27,7 +27,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 8.1"/>
-    <property name="classworlds.conf" value="C:\Users\user\Eclipse_workspace1\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf7764626594362058577.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\user\Eclipse_workspace1\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf8650077707588051770.tmp"/>
     <property name="jansi.force" value="true"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_241\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_241/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_241/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_241/bin/../jre/lib/amd64;C:\Program Files\Java\jdk1.8.0_241\bin;C:\questasim64_10.4e\win64;C:\Users\user\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\user\Desktop\Desktop\Capgemini\Module_1\sts-4.5.1.RELEASE;;."/>
@@ -46,7 +46,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_241\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Pjunit-jupiter-api -B install -Dstyle.color=always"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Pjunit-jupiter-api -B test -Dstyle.color=always"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -64,55 +64,67 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.capgemini.lpu.inventorytests.AddOrderTest" name="com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder2" time="0.126">
-    <failure message="Unexpected exception type thrown ==&gt; expected: &lt;com.capgemini.lpu.exceptions.InvalidProductIdException&gt; but was: &lt;java.lang.NullPointerException&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==&gt; expected: &lt;com.capgemini.lpu.exceptions.InvalidProductIdException&gt; but was: &lt;java.lang.NullPointerException&gt;
+  <testcase classname="com.capgemini.lpu.inventorytests.AddOrderTest" name="com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder2" time="0.125">
+    <failure message="Unexpected exception type thrown ==&gt; expected: &lt;com.capgemini.lpu.exceptions.InvalidVendorIDException&gt; but was: &lt;java.lang.NullPointerException&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==&gt; expected: &lt;com.capgemini.lpu.exceptions.InvalidVendorIDException&gt; but was: &lt;java.lang.NullPointerException&gt;
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:65)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
 	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:2952)
-	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder2(AddOrderTest.java:35)
+	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder2(AddOrderTest.java:38)
 Caused by: java.lang.NullPointerException
-	at com.capgemini.lpu.inventorytests.AddOrderTest.lambda$0(AddOrderTest.java:35)
+	at com.capgemini.lpu.inventorytests.AddOrderTest.lambda$1(AddOrderTest.java:38)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55)
 	... 21 more
 </failure>
   </testcase>
   <testcase classname="com.capgemini.lpu.inventorytests.AddOrderTest" name="com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder1" time="0">
-    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
-	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder1(AddOrderTest.java:29)
+    <failure message="Unexpected exception type thrown ==&gt; expected: &lt;com.capgemini.lpu.exceptions.InvalidVendorIDException&gt; but was: &lt;java.lang.NullPointerException&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==&gt; expected: &lt;com.capgemini.lpu.exceptions.InvalidVendorIDException&gt; but was: &lt;java.lang.NullPointerException&gt;
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:65)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:2952)
+	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder1(AddOrderTest.java:32)
+Caused by: java.lang.NullPointerException
+	at com.capgemini.lpu.inventorytests.AddOrderTest.lambda$0(AddOrderTest.java:32)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55)
+	... 21 more
 </failure>
   </testcase>
-  <testcase classname="com.capgemini.lpu.inventorytests.AddOrderTest" name="com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder3" time="0">
+  <testcase classname="com.capgemini.lpu.inventorytests.AddOrderTest" name="com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder3" time="0.001">
     <failure message="Unexpected exception type thrown ==&gt; expected: &lt;com.capgemini.lpu.exceptions.InvalidProductIdException&gt; but was: &lt;java.lang.NullPointerException&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==&gt; expected: &lt;com.capgemini.lpu.exceptions.InvalidProductIdException&gt; but was: &lt;java.lang.NullPointerException&gt;
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:65)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
 	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:2952)
-	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder3(AddOrderTest.java:41)
+	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder3(AddOrderTest.java:44)
 Caused by: java.lang.NullPointerException
-	at com.capgemini.lpu.inventorytests.AddOrderTest.lambda$1(AddOrderTest.java:41)
+	at com.capgemini.lpu.inventorytests.AddOrderTest.lambda$2(AddOrderTest.java:44)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55)
 	... 21 more
 </failure>
   </testcase>
   <testcase classname="com.capgemini.lpu.inventorytests.AddOrderTest" name="com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder5" time="0">
-    <failure message="Unexpected exception type thrown ==&gt; expected: &lt;com.capgemini.lpu.exceptions.InvalidVendorIDException&gt; but was: &lt;java.lang.NullPointerException&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==&gt; expected: &lt;com.capgemini.lpu.exceptions.InvalidVendorIDException&gt; but was: &lt;java.lang.NullPointerException&gt;
-	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:65)
-	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
-	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:2952)
-	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder5(AddOrderTest.java:53)
-Caused by: java.lang.NullPointerException
-	at com.capgemini.lpu.inventorytests.AddOrderTest.lambda$3(AddOrderTest.java:53)
-	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55)
-	... 21 more
-</failure>
-  </testcase>
-  <testcase classname="com.capgemini.lpu.inventorytests.AddOrderTest" name="com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder4" time="0.002">
     <failure message="Unexpected exception type thrown ==&gt; expected: &lt;com.capgemini.lpu.exceptions.OutofStockException&gt; but was: &lt;java.lang.NullPointerException&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==&gt; expected: &lt;com.capgemini.lpu.exceptions.OutofStockException&gt; but was: &lt;java.lang.NullPointerException&gt;
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:65)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
 	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:2952)
-	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder4(AddOrderTest.java:47)
+	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder5(AddOrderTest.java:56)
 Caused by: java.lang.NullPointerException
-	at com.capgemini.lpu.inventorytests.AddOrderTest.lambda$2(AddOrderTest.java:47)
+	at com.capgemini.lpu.inventorytests.AddOrderTest.lambda$4(AddOrderTest.java:56)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55)
+	... 21 more
+</failure>
+  </testcase>
+  <testcase classname="com.capgemini.lpu.inventorytests.AddOrderTest" name="com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder6" time="0.001">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder6(AddOrderTest.java:62)
+</failure>
+  </testcase>
+  <testcase classname="com.capgemini.lpu.inventorytests.AddOrderTest" name="com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder4" time="0.002">
+    <failure message="Unexpected exception type thrown ==&gt; expected: &lt;com.capgemini.lpu.exceptions.InvalidProductIdException&gt; but was: &lt;java.lang.NullPointerException&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==&gt; expected: &lt;com.capgemini.lpu.exceptions.InvalidProductIdException&gt; but was: &lt;java.lang.NullPointerException&gt;
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:65)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:2952)
+	at com.capgemini.lpu.inventorytests.AddOrderTest.testAddOrder4(AddOrderTest.java:50)
+Caused by: java.lang.NullPointerException
+	at com.capgemini.lpu.inventorytests.AddOrderTest.lambda$3(AddOrderTest.java:50)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55)
 	... 21 more
 </failure>

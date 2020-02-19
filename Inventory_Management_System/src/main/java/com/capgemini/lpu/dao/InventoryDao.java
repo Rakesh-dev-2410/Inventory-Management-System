@@ -12,7 +12,7 @@ import com.capgemini.lpu.exceptions.InvalidVendorIDException;
 public interface InventoryDao {
 
 	public  ProductStock getProduct(String pid) throws InvalidProductIdException;	//returns the product
-	public boolean daoAddOrder(Order order) throws InvalidOrderIdException ;
+	public boolean daoAddOrder(Order order) ;
 	
 	public void updateProductStock(ProductStock prod);			//updates stock after placing an order
 	public Order getOrder(String ordID) throws InvalidOrderIdException;			//checks whether order id is present in orderlist or not. 

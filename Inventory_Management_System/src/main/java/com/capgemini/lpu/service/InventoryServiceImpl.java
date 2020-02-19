@@ -20,8 +20,12 @@ public class InventoryServiceImpl implements InventoryService {
 	@Override
 	public boolean addOrder(Order order) throws InvalidOrderIdException, InvalidProductIdException, 
 											   InvalidVendorIDException, OutofStockException {
-		String ordid=orderIdGenerator();
-		order.setOrderId(ordid);
+		
+		if(!order.getvendorID().matches("[1][0-9]{3}") || order.getvendorID()==null)
+			throw new InvalidVendorIDException();		//validates Vendor ID.
+		
+		if( !order.getProdId().matches("[A-Z][0-9]{3}") || order.getProdId()==null)
+			throw new InvalidProductIdException();	//validates Product Id.
 		
 		ProductStock prod = dao.getProduct(order.getProdId());	//check Product ID in the productStock
 		if(order.getOrderQty()>prod.getProdStockQty())
@@ -29,17 +33,12 @@ public class InventoryServiceImpl implements InventoryService {
 		
 		/*if(order.getOrderId()!="[A-Z][1][0-9]{2}" || order.getOrderId() == null)	
 			throw new InvalidOrderIdException();	//validates Order Id.
-	
 		*/
-		if(order.getvendorID()!="[1][0-9]{3}" || order.getvendorID()==null)
-			throw new InvalidVendorIDException();		//validates Vendor ID.
 		
-		if( order.getProdId() != "[A-Z][0-9]{3}"|| order.getProdId()==null)
-			throw new InvalidProductIdException();	//validates Product Id.
-		
-		InvSupplier sup = dao.getVendor(order.getvendorID());	//checks vendor
 		
 		if(dao.daoAddOrder(order)) {
+			String ordid=orderIdGenerator();
+			order.setOrderId(ordid);
 			ProductStock prod1 = dao.getProduct(order.getProdId());
 			int stock = prod1.getProdStockQty()-order.getOrderQty();
 			prod1.setProdStockQty(stock);

@@ -21,13 +21,12 @@ public class InventoryDaoImpl implements InventoryDao {
 	}
 
 	@Override
-	public boolean daoAddOrder(Order order) throws InvalidOrderIdException {
+	public boolean daoAddOrder(Order order) {
 		if(!InventoryRepository.ordermap.containsKey(order.getOrderId())) {
 			InventoryRepository.ordermap.put(order.getOrderId(),order);
 			return true;
 			}
-		
-			throw new InvalidOrderIdException();
+		return false;
 			
 	}
 

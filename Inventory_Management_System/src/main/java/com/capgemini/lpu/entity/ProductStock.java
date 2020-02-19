@@ -23,6 +23,10 @@ public class ProductStock {
 		this.sup = sup;
 	}
 
+	public ProductStock() {
+		super();
+	}
+	
 	public String getProdId() {
 		return prodId;
 	}

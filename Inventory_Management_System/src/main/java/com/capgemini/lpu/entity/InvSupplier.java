@@ -1,7 +1,7 @@
 package com.capgemini.lpu.entity;
 
 public class InvSupplier {
-	
+
 	private String supId;
 	private String supName;
 	private String supCity;
@@ -13,6 +13,10 @@ public class InvSupplier {
 		this.supName = supName;
 		this.supCity = supCity;
 		this.supPh = supPh;
+	}
+	
+	public InvSupplier() {
+		super();
 	}
 
 	public String getSupId() {
